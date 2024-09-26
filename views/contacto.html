@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Camisetas Cabrero</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 400px; /* Altura del mapa */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="text-center bg-primary text-white py-3">
+        <img src="../img/logo.png" alt="Logo Camisetas Cabrero" class="logo">
+        <h1 class="d-inline">Camisetas Cabrero</h1>
+        <nav>
+            <ul class="nav justify-content-end">
+                <li class="nav-item"><a class="nav-link text-white" href="../index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="galeria.html">Galería</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container my-4">
+        <h2>Contacto</h2>
+        <img src="../img/contacto.jpg" class="img-fluid d-none d-md-block mb-4" alt="Contacto">
+        <form>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" class="form-control" id="apellidos" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="comentarios">Comentarios</label>
+                <textarea class="form-control" id="comentarios" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+        <div id="map"></div>
+    </div>
+
+    <footer class="text-center bg-primary text-white py-3">
+        <p>Teléfono: 671355341</p>
+        <p>Email: camisetascabrero@gmail.com</p>
+        <div>
+            <a href="https://www.facebook.com" target="_blank"><img src="../img/facebook.png" alt="Facebook" width="30" height="30"></a>
+            <a href="https://www.twitter.com" target="_blank"><img src="../img/twitter.png" alt="Twitter" width="30" height="30"></a>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Inicializa el mapa
+        var map = L.map('map').setView([37.6859, -3.6612], 15); // Coordenadas de Linares, Jaén
+
+        // Capa de OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Marcador en la dirección especificada
+        var marker = L.marker([37.6859, -3.6612]).addTo(map);
+        marker.bindPopup("<b>Camisetas Cabrero</b><br>C/Gardenia 68, Linares, Jaén").openPopup();
+    </script>
+</body>
+</html>

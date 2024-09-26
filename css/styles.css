@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.logo {
+    width: 100px; /* Ajusta el tamaño del logo */
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    .d-md-block {
+        display: none !important;
+    }
+}
